@@ -1,0 +1,21 @@
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8); /* Темный фон */
+    z-index: 1000; /* Обеспечивает отображение над другими элементами */
+  }
+  
+  .bgImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(8px);
+    z-index: -1;
+  }
+  

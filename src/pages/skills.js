@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 
 export default function Skills() {
   const [ref, inView] = useInView({
-    triggerOnce: false,  // Changed to false to trigger every time element enters the view
+    triggerOnce: false, // Вы можете изменить это на true, если анимация нужна только один раз
     threshold: 0.01,
   });
 
@@ -16,6 +16,7 @@ export default function Skills() {
 
   return (
     <div className="mx-auto max-w-6xl p-5 py-8 md:py-20" id="skills">
+      <hr className="mb-10 border-gray-300"/>
       <div className="mb-8 md:mb-16 pb-4 text-6xl font-medium text-gray-300 md:text-left md:text-7xl">
         Навыки
       </div>
@@ -41,6 +42,7 @@ export default function Skills() {
           </motion.div>
         ))}
       </div>
+      <hr className="mt-10 border-gray-300"/>
     </div>
   );
 }

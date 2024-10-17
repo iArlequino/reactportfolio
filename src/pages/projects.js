@@ -30,7 +30,7 @@ const projects = [
     img: Xenia,
     links: [
       {
-        icon: <img alt="" src="https://img.icons8.com/ios-filled/50/000000/link--v1.png" className="h-full"></img>,
+        icon: <img alt="" src=""></img>,
         link: '',
       },
     ],
@@ -41,7 +41,7 @@ const projects = [
     img: Streetster,
     links: [
       {
-        icon: <img alt="" src="https://img.icons8.com/ios-filled/50/000000/link--v1.png" className="h-full"></img>,
+        icon: <img alt="" src=""></img>,
         link: 'https://streetster.vercel.app',
       },
     ],
@@ -52,18 +52,18 @@ const projects = [
     details: "Простой лендинг интернет магазина электроники на React",
     links: [
       {
-        icon: <img alt="" src="https://img.icons8.com/ios-filled/50/000000/link--v1.png" className="h-full"></img>,
+        icon: <img alt="" src=""></img>,
         link: 'https://phoner-react-shop.vercel.app',
       },
     ],
   },
   {
     title: 'Intense',
-    details: 'Интенсив по скоростному наращиванию рестниц',
+    details: 'Интенсив по скоростному наращиванию ресниц',
     img: Intense,
     links: [
       {
-        icon: <img alt="" src="https://img.icons8.com/ios-filled/50/000000/link--v1.png" className="h-full"></img>,
+        icon: <img alt="" src=""></img>,
         link: 'https://intense-one.vercel.app',
       },
     ],
@@ -74,7 +74,7 @@ const projects = [
     img: Divan,
     links: [
       {
-        icon: <img alt="" src="https://img.icons8.com/ios-filled/50/000000/link--v1.png" className="h-full"></img>,
+        icon: <img alt="" src=""></img>,
         link: 'https://divan-amber.vercel.app',
       },
     ],
@@ -89,7 +89,7 @@ export default function Projects() {
   });
 
   return (
-    <div className="relative overflow-hidden bg-[hsl(272,68%,4%)]" id="projects">
+    <div className="relative overflow-hidden bg-#161125" id="projects">
       <div className="mx-auto max-w-6xl p-5 py-8 md:py-20" id="experience">
         <div className="mb-8 md:mb-16 pb-4 text-6xl font-medium text-gray-300 md:text-left md:text-7xl">
           Проекты
@@ -98,8 +98,8 @@ export default function Projects() {
           {projects.map((proj, index) => (
             <motion.a
               href={proj.links[0].link}
-              className={`space-y-4 bg-[hsl(272,68%,2%)] text-white p-4 shadow-md transition duration-300 ${
-                hoveredIndex !== null && hoveredIndex !== index ? 'blur-sm' : ''
+              className={`space-y-4 text-white p-4 rounded-lg transition duration-300 ${
+                hoveredIndex !== null && hoveredIndex !== index ? 'opacity-30 blur' : 'opacity-100'
               }`}
               key={`project${index}`}
               ref={ref}
@@ -109,11 +109,12 @@ export default function Projects() {
               transition={{ duration: 1 }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
+              style={{ boxShadow: '0 4px 30px rgba(255, 255, 255, 0.6)' }}
             >
               <div className="relative h-32 overflow-hidden border-b">
                 <img alt="" src={proj.img} className="absolute left-0 my-auto w-full"></img>
               </div>
-              <div className="text-2xl text-gray-200">{proj.title}</div>
+              <div className="text-2xl text-gray-200 text-center">{proj.title}</div>
               <div className="h-20 overflow-y-auto text-xs font-light text-gray-400">
                 {proj.details}
               </div>
@@ -138,6 +139,9 @@ export default function Projects() {
     </div>
   );
 }
+
+
+   
 
 
 

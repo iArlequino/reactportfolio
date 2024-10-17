@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Typing from 'react-typing-effect';
 import './home.css';
 
 export default function Home() {
@@ -10,15 +11,15 @@ export default function Home() {
   });
 
   return (
-    <motion.div 
-      className="home shadow-2xl" 
-      id="home" 
+    <motion.div
+      className="home shadow-2xl"
+      id="home"
       ref={ref}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: inView ? 0 : -100, opacity: inView ? 1 : 0 }}
       transition={{ duration: 1 }}
     >
-      <motion.div 
+      <motion.div
         className="overlay flex flex-col items-center justify-center p-5"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: inView ? 0 : -100, opacity: inView ? 1 : 0 }}
@@ -31,7 +32,15 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center justify-center space-x-4 text-lg md:flex-row md:text-2xl">
             <div className="font-bold text-gray-300">
-              Front-End Developer <span className="font-thin text-white"></span>
+              <Typing
+                text={['Front-End Developer']}
+                speed={100}
+                eraseSpeed={50}
+                eraseDelay={2000}
+                typingDelay={1000}
+                cursor="|"
+              />
+              <span className="font-thin text-white"></span>
             </div>
             <div className="flex items-center space-x-4">
               <div className="relative h-8 w-10 md:h-10">
@@ -44,4 +53,5 @@ export default function Home() {
     </motion.div>
   );
 }
+
 
